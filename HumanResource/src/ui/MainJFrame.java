@@ -115,7 +115,7 @@ public class MainJFrame extends javax.swing.JFrame {
         //AddJPanel addPanel = new AddJPanel();
         //splitPane.setRightComponent(addPanel);
         
-        AddJPanel addPanel = new AddJPanel();
+        AddJPanel addPanel = new AddJPanel(history);
         splitPane.setRightComponent(addPanel);
 
 // TODO add your handling code here:

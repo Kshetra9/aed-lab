@@ -20,8 +20,9 @@ public class AddJPanel extends javax.swing.JPanel {
      */
     EmployeeHistory history;
     
-    public AddJPanel() {
+    public AddJPanel(EmployeeHistory history) {
         initComponents();
+        this.history = history;
         
         
     }

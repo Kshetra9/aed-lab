@@ -21,7 +21,9 @@ public class EmployeeHistory {
 }
 
     public ArrayList<EmployeeInfo> getHistory() {
+        System.out.println(history);
         return history;
+        
     }
 
     public void setHistory(ArrayList<EmployeeInfo> history) {
