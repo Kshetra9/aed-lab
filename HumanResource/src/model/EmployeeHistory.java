@@ -22,6 +22,7 @@ public class EmployeeHistory {
 
     public ArrayList<EmployeeInfo> getHistory() {
         System.out.println(history);
+        
         return history;
         
     }
@@ -33,7 +34,19 @@ public class EmployeeHistory {
     public EmployeeInfo addNewEmployee(){
         EmployeeInfo addEmployee = new EmployeeInfo();
         history.add(addEmployee);
+        
+        for (int i = 0; i < history.size(); i++) {
+            
+            System.out.println(history.get(i) + " ");
+        }
         return addEmployee;
+    }
+    
+    public void deleteEmployee(EmployeeInfo ei){
+        
+        history.remove(ei);
+        
+        
     }
     
 }

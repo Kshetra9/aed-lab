@@ -107,7 +107,10 @@ public class EmployeeInfo {
         this.emailaddr = emailaddr;
     }
             
-    
+    @Override
+    public String toString(){
+        return name;
+    }
     
     
 }
