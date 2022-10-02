@@ -63,6 +63,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         txtTeam = new javax.swing.JTextField();
         lblGender = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
+        btnUpdate = new javax.swing.JButton();
 
         lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -175,6 +176,13 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -189,6 +197,8 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnUpdate)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnView)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnDelete))
@@ -234,7 +244,8 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnView)
-                    .addComponent(btnDelete))
+                    .addComponent(btnDelete)
+                    .addComponent(btnUpdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblName)
@@ -366,9 +377,48 @@ public class ViewJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnViewActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblEmployee.getSelectedRow();
+        
+        DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+        EmployeeInfo selectedEmployee = (EmployeeInfo)model.getValueAt(selectedRowIndex, 0);
+        
+        if(tblEmployee.getSelectedRowCount() == 1){
+            
+            String name = txtName.getText();
+            int id = Integer.parseInt(txtID.getText());
+            int age = Integer.parseInt(txtAge.getText());
+            int phone = Integer.parseInt(txtPhone.getText());
+            String gender = txtGender.getText();
+            String startdate = txtStartdate.getText();
+            String level = txtLevel.getText();
+            String teaminfo = txtTeam.getText();
+            String position = txtPosition.getText();
+            String emailaddr = txtEmail.getText();
+            
+            // set updated value
+            model.setValueAt(name, tblEmployee.getSelectedRow(), 0);
+            model.setValueAt(id, tblEmployee.getSelectedRow(), 1);
+            model.setValueAt(age, tblEmployee.getSelectedRow(), 2);
+            model.setValueAt(phone, tblEmployee.getSelectedRow(), 3);
+            model.setValueAt(gender, tblEmployee.getSelectedRow(), 4);
+            model.setValueAt(startdate, tblEmployee.getSelectedRow(), 5);
+            model.setValueAt(level, tblEmployee.getSelectedRow(), 6);
+            model.setValueAt(teaminfo, tblEmployee.getSelectedRow(), 7);
+            model.setValueAt(position, tblEmployee.getSelectedRow(), 8);
+            model.setValueAt(emailaddr, tblEmployee.getSelectedRow(), 9);
+            
+            
+            
+        }
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAge;
