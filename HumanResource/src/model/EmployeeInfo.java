@@ -23,7 +23,7 @@ public class EmployeeInfo {
     private String level;
     private String teaminfo;
     private String position;
-    private int phone;
+    private String phone;
     private String emailaddr;
     // Documents/JavaAssignments/HumanResource/Article1.png
 
@@ -91,11 +91,11 @@ public class EmployeeInfo {
         this.position = position;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

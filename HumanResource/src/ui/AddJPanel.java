@@ -257,7 +257,7 @@ public class AddJPanel extends javax.swing.JPanel {
         String name = txtName.getText();
         int id = Integer.parseInt(txtID.getText());
         int age = Integer.parseInt(txtAge.getText());
-        int phone = Integer.parseInt(txtPhone.getText());
+        String phone = txtPhone.getText();
         String gender = txtGender.getText();
         String startdate = txtStartdate.getText();
         String level = txtLevel.getText();
